@@ -1,0 +1,19 @@
+{
+  "name": "aptiquest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AptiQuest - real-time multiplayer aptitude quiz platform",
+  "scripts": {
+    "setup": "npm install && npm --prefix server install && npm --prefix client install && npm --prefix tests install",
+    "dev": "concurrently -n server,client -c cyan,yellow \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "server": "npm --prefix server run start",
+    "client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server run start",
+    "seed": "npm --prefix server run seed",
+    "loadtest": "npm --prefix tests run test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
